@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Daniel Media & Technologies</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:Arial,sans-serif;
+  background:#faf7f0;
+  color:#102333;
+  line-height:1.6;
+}
+:root{--navy:#061a2a;--gold:#d9a94f;--cream:#faf7f0}
+a{text-decoration:none;color:inherit}
+header{
+  background:var(--navy);
+  color:white;
+  padding:18px 7%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.logo{font-family:Georgia,serif;color:var(--gold);font-size:25px;font-weight:bold}
+.logo small{display:block;font:9px Arial;letter-spacing:3px;color:white}
+nav{display:flex;gap:22px;flex-wrap:wrap}
+nav a{font-size:13px;color:#eee}
+nav a:hover{color:var(--gold)}
+.quote{
+  background:var(--gold);color:#071a29;padding:10px 20px;
+  border-radius:25px;font-size:13px;font-weight:bold
+}
+.hero{
+  min-height:360px;
+  background:linear-gradient(90deg,rgba(3,17,29,.96),rgba(3,17,29,.62)),
+  url("file_00000000ce5c8208a422f98349da5378.png") center/cover;
+  color:white;padding:75px 8%;
+  display:flex;align-items:center;
+}
+.hero-content{max-width:600px}
+.breadcrumb{font-size:12px;color:#d9bd83;margin-bottom:15px}
+.hero h1{font:clamp(42px,7vw,68px) Georgia,serif;margin-bottom:8px}
+.hero h1 span{color:var(--gold)}
+.hero p{max-width:520px;color:#e0e0e0;font-size:14px}
+.features{display:flex;gap:25px;flex-wrap:wrap;margin-top:28px}
+.features span{font-size:12px;color:#f5e5c5}
+.features span:before{content:"✧ ";color:var(--gold);font-size:18px}
+.section{padding:55px 7%}
+.section-title{font:30px Georgia,serif;color:var(--navy);margin-bottom:5px}
+.gold-line{width:45px;height:3px;background:var(--gold);margin-bottom:12px}
+.sub{font-size:13px;color:#777;margin-bottom:22px}
+.contact-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:35px}
+.form-card,.info-card{
+  background:white;border:1px solid #eee4d3;border-radius:15px;
+  padding:28px;box-shadow:0 8px 25px rgba(0,0,0,.04)
+}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.field{margin-bottom:15px}
+.field label{display:block;font-size:12px;margin-bottom:7px;color:#333}
+.field input,.field select,.field textarea{
+  width:100%;padding:14px;border:1px solid #e5dfd5;
+  border-radius:10px;background:#fff;font:13px Arial;outline:none
+}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold)}
+.field textarea{height:115px;resize:vertical}
+.full{grid-column:1/-1}
+.submit{
+  border:0;background:linear-gradient(90deg,#d6a34b,#efc978);
+  color:#102333;padding:14px 25px;border-radius:30px;
+  width:100%;font-weight:bold;cursor:pointer
+}
+.info-item{display:flex;gap:15px;align-items:center;margin:20px 0}
+.info-icon{
+  min-width:43px;height:43px;border-radius:50%;
+  background:var(--navy);color:var(--gold);
+  display:grid;place-items:center;font-size:19px
+}
+.info-item h3{font:17px Georgia,serif}
+.info-item p{font-size:12px;color:#777}
+.info-item a{font-size:13px}
+.info-item a:hover{color:#b17d25}
+.action-link{
+  display:flex;justify-content:space-between;align-items:center;
+  border:1px solid #eee5d8;padding:13px;border-radius:10px;
+  margin-top:12px;font-size:13px
+}
+.action-link:hover{border-color:var(--gold)}
+.location-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:stretch}
+.dark-panel{background:var(--navy);color:white;border-radius:15px;padding:28px}
+.dark-panel .section-title{color:white}
+.map{width:100%;height:260px;border:0;border-radius:12px;margin-top:15px}
+.work-panel{
+  background:linear-gradient(120deg,#fff,#f3e7d1);
+  border-radius:15px;padding:30px;display:flex;flex-direction:column;justify-content:center
+}
+.work-panel h2{font:29px Georgia,serif;margin-bottom:10px}
+.work-panel p{font-size:13px;color:#666;margin-bottom:18px}
+.btn-gold,.btn-outline{
+  display:inline-block;text-align:center;padding:12px 20px;
+  border-radius:25px;margin:5px 0;font-size:13px;font-weight:bold
+}
+.btn-gold{background:var(--gold);color:var(--navy)}
+.btn-outline{border:1px solid var(--navy)}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.why-card{background:white;padding:20px;border-radius:12px;border:1px solid #eee5d8}
+.why-card .symbol{font-size:25px;color:#c28c35}
+.why-card h3{font:16px Georgia,serif;margin:8px 0}
+.why-card p{font-size:12px;color:#777}
+.faq-section{background:var(--navy);color:white;position:relative}
+.faq-section .section-title{color:white}
+.faq-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+details{border:1px solid #294052;border-radius:10px;padding:15px}
+summary{cursor:pointer;font-size:13px}
+details p{font-size:12px;color:#c8d0d6;padding-top:12px}
+footer{background:#03111d;color:#ddd;padding:40px 7% 20px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:25px}
+footer h3{color:var(--gold);font:18px Georgia,serif;margin-bottom:12px}
+footer p,footer a{font-size:12px;color:#c2c9ce;display:block;margin:6px 0}
+footer a:hover{color:var(--gold)}
+.copyright{border-top:1px solid #233440;margin-top:30px;padding-top:15px;
+display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:11px;color:#89939b}
+@media(max-width:800px){
+  .contact-grid,.location-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:520px){
+  header{padding:15px 5%}
+  nav{gap:13px}
+  nav a{font-size:11px}
+  .hero{padding:55px 6%;min-height:330px}
+  .section{padding:40px 5%}
+  .form-grid,.faq-list{grid-template-columns:1fr}
+  .full{grid-column:auto}
+  .form-card,.info-card{padding:20px}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="index.html" class="logo">DANIEL<small>MEDIA & TECHNOLOGIES</small></a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="blog.html">Blog</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <a class="quote" href="#contact-form">Get a Quote →</a>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="breadcrumb">Home &nbsp;›&nbsp; Contact</div>
+    <h1>Contact <span>Us</span></h1>
+    <h3 style="font:18px Georgia,serif;margin-bottom:12px">Let's Bring Your Ideas to Life.</h3>
+    <p>We're here to help you with all your digital needs. Whether you have a project in mind, need a consultation, or just want to know more about our services, feel free to reach out. Our team will get back to you as soon as possible.</p>
+    <div class="features">
+      <span>Quick Response</span>
+      <span>Friendly Support</span>
+      <span>Customized Solutions</span>
+      <span>Client Focused</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact-form">
+  <div class="contact-grid">
+    <div>
+      <div class="gold-line"></div>
+      <h2 class="section-title">Send Us a Message</h2>
+      <p class="sub">Fill out the form below and our team will get back to you shortly.</p>
+      <div class="form-card">
+        <form id="enquiryForm">
+          <div class="form-grid">
+            <div class="field">
+              <label>Your Name *</label>
+              <input id="name" type="text" placeholder="Your Name" required>
+            </div>
+            <div class="field">
+              <label>Phone Number *</label>
+              <input id="phone" type="tel" placeholder="Your Phone Number" required>
+            </div>
+            <div class="field">
+              <label>Email Address</label>
+              <input id="email" type="email" placeholder="Your Email Address">
+            </div>
+            <div class="field">
+              <label>Service Interested In *</label>
+              <select id="service" required>
+                <option value="">Select a Service</option>
+                <option>Website Development</option>
+                <option>E-Commerce Website</option>
+                <option>Branding & Design</option>
+                <option>Digital Marketing</option>
+                <option>Video & Content</option>
+                <option>Technology Solutions</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label>Your Message *</label>
+              <textarea id="message" placeholder="Tell us about your project or requirements..." required></textarea>
+            </div>
+            <div class="field full">
+              <button class="submit" type="submit">Send Message &nbsp; →</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div>
+      <div class="gold-line"></div>
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="sub">We're just a call, message or email away.</p>
+      <div class="info-card">
+        <div class="info-item">
+          <div class="info-icon">☎</div>
+          <div><h3>Phone</h3><a href="tel:+918248666037">+91 82486 66037</a><p>Contact us for enquiries</p></div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">✉</div>
+          <div><h3>Email</h3><a href="mailto:info@danielmediatechnologies.in">info@danielmediatechnologies.in</a><p>We usually reply within 24 hours</p></div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">⌖</div>
+          <div><h3>Location</h3><p>Tamil Nadu, India</p><p>Available for Pan India & Global Projects</p></div>
+        </div>
+        <a class="action-link" href="https://wa.me/918248666037" target="_blank">🟢 &nbsp; Chat on WhatsApp <span>›</span></a>
+        <a class="action-link" href="mailto:info@danielmediatechnologies.in?subject=Meeting%20Request">▣ &nbsp; Schedule a Meeting <span>›</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:10px">
+  <div class="location-grid">
+    <div class="dark-panel">
+      <div class="gold-line"></div>
+      <h2 class="section-title">Our Location</h2>
+      <p style="font-size:13px;color:#d1d8dc">Visit us or find us on the map. We are located in Tamil Nadu, but we work with clients across India and worldwide.</p>
+      <iframe class="map" loading="lazy" allowfullscreen
+        src="https://www.google.com/maps?q=Dharmapuri,Tamil%20Nadu,India&output=embed">
+      </iframe>
+    </div>
+    <div class="work-panel">
+      <h2>Let's Work Together</h2>
+      <p>Have a project in mind? Get a free consultation and customized plan for your business.</p>
+      <a class="btn-gold" href="#contact-form">Get a Free Quote →</a>
+      <a class="btn-outline" href="https://wa.me/918248666037" target="_blank">🟢 Chat on WhatsApp</a>
+      <p style="margin-top:18px">✧ Free Consultation &nbsp; ✧ Customized Solutions &nbsp; ✧ On-Time Response</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:10px">
+  <div class="gold-line"></div>
+  <h2 class="section-title">Why Contact Us?</h2>
+  <p class="sub">We believe in clear communication, transparency and long-term partnerships.</p>
+  <div class="why-grid">
+    <div class="why-card"><div class="symbol">◇</div><h3>Discuss Your Ideas</h3><p>Share your goals and requirements with us.</p></div>
+    <div class="why-card"><div class="symbol">⚙</div><h3>Get Expert Advice</h3><p>Our team will suggest the best solutions.</p></div>
+    <div class="why-card"><div class="symbol">▤</div><h3>Customized Proposal</h3><p>Receive a tailored plan and quotation.</p></div>
+    <div class="why-card"><div class="symbol">➤</div><h3>Start Your Project</h3><p>Let's bring your ideas to life.</p></div>
+  </div>
+</section>
+
+<section class="section faq-section">
+  <div class="gold-line"></div>
+  <h2 class="section-title">Frequently Asked Questions</h2>
+  <p class="sub" style="color:#c5cdd3">Quick answers to common questions.</p>
+  <div class="faq-list">
+    <details><summary>How quickly will you respond?</summary><p>We aim to respond to enquiries as soon as possible, usually within one business day.</p></details>
+    <details><summary>Can I work with you outside Tamil Nadu?</summary><p>Yes. We work with clients across India and can discuss projects worldwide.</p></details>
+    <details><summary>Do you provide free consultation?</summary><p>Yes. Contact us to discuss your requirements and explore suitable solutions.</p></details>
+    <details><summary>How do I get a quote for my project?</summary><p>Submit the enquiry form with your project details. We will contact you to discuss the requirements.</p></details>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h3>DANIEL</h3>
+      <p>We create brands, grow businesses and build digital experiences that make an impact.</p>
+      <p>Instagram &nbsp; Facebook &nbsp; YouTube &nbsp; LinkedIn</p>
+    </div>
+    <div>
+      <h3>Quick Links</h3>
+      <a href="index.html">Home</a><a href="about.html">About</a>
+      <a href="services.html">Services</a><a href="blog.html">Blog</a>
+      <a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a>
+    </div>
+    <div>
+      <h3>Our Services</h3>
+      <a href="services.html">Branding & Design</a>
+      <a href="services.html">Digital Marketing</a>
+      <a href="services.html">Website Development</a>
+      <a href="services.html">Video & Content</a>
+      <a href="services.html">Technology Solutions</a>
+    </div>
+    <div>
+      <h3>Contact Info</h3>
+      <a href="tel:+918248666037">☎ +91 82486 66037</a>
+      <a href="mailto:info@danielmediatechnologies.in">✉ info@danielmediatechnologies.in</a>
+      <p>⌖ Tamil Nadu, India</p>
+    </div>
+  </div>
+  <div class="copyright">
+    <span>© 2026 Daniel Media & Technologies. All rights reserved.</span>
+    <span>Privacy Policy &nbsp; | &nbsp; Terms & Conditions</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById("enquiryForm").addEventListener("submit",function(e){
+  e.preventDefault();
+
+  const name=document.getElementById("name").value.trim();
+  const phone=document.getElementById("phone").value.trim();
+  const email=document.getElementById("email").value.trim();
+  const service=document.getElementById("service").value;
+  const message=document.getElementById("message").value.trim();
+
+  const text=
+    "New Website Enquiry%0A"+
+    "Name: "+encodeURIComponent(name)+"%0A"+
+    "Phone: "+encodeURIComponent(phone)+"%0A"+
+    "Email: "+encodeURIComponent(email)+"%0A"+
+    "Service: "+encodeURIComponent(service)+"%0A"+
+    "Message: "+encodeURIComponent(message);
+
+  window.open("https://wa.me/918248666037?text="+text,"_blank");
+});
+</script>
+
+</body>
+</html>
