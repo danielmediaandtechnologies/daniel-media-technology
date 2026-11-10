@@ -1,0 +1,319 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Client Portal | Daniel Media & Technology</title>
+<style>
+:root {
+  --navy:#061525;
+  --navy2:#0b2033;
+  --gold:#d8ad61;
+  --cream:#f8f3e9;
+  --white:#fff;
+  --text:#182434;
+  --muted:#777;
+}
+* {margin:0;padding:0;box-sizing:border-box}
+body {
+  font-family:Arial,sans-serif;
+  background:var(--cream);
+  color:var(--text);
+}
+header {
+  background:var(--navy);
+  color:white;
+  padding:16px 5%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+.brand {display:flex;align-items:center;gap:10px}
+.logo {
+  width:43px;height:43px;border:1px solid var(--gold);
+  border-radius:50%;display:grid;place-items:center;
+  color:var(--gold);font-size:25px;font-weight:bold;
+}
+.brand strong {display:block;font-family:Georgia,serif;letter-spacing:2px}
+.brand small {font-size:9px;color:var(--gold);letter-spacing:2px}
+header nav {display:flex;gap:22px;flex-wrap:wrap}
+header nav a {color:white;text-decoration:none;font-size:12px}
+header nav a:hover {color:var(--gold)}
+.profile {font-size:12px;color:var(--gold)}
+.hero {
+  background:linear-gradient(90deg,#061525 35%,#102238);
+  color:white;padding:45px 6%;
+  border-bottom:3px solid var(--gold);
+}
+.hero h1 {font:42px Georgia,serif;margin-bottom:10px}
+.hero h1 span {color:var(--gold)}
+.hero p {color:#d4d8df;font-size:14px;line-height:1.7;max-width:600px}
+.container {max-width:1250px;margin:auto;padding:25px 4%}
+.layout {display:grid;grid-template-columns:220px 1fr;gap:20px}
+.sidebar {
+  background:var(--navy);color:white;padding:20px 12px;
+  border-radius:10px;min-height:480px;
+}
+.user {
+  padding:12px;border-bottom:1px solid #ffffff22;
+  margin-bottom:15px;font-size:13px;
+}
+.user span {color:var(--gold)}
+.sidebar a {
+  display:block;color:#eee;text-decoration:none;
+  padding:13px 12px;border-radius:6px;font-size:13px;
+  margin:5px 0;
+}
+.sidebar a:hover,.sidebar a.active {
+  background:var(--gold);color:var(--navy);
+}
+.section-title {font:25px Georgia,serif;margin-bottom:16px}
+.stats {
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:12px;margin-bottom:24px;
+}
+.stat,.panel {
+  background:white;border:1px solid #eee3d2;
+  border-radius:10px;padding:18px;
+}
+.stat small {color:var(--muted);font-size:11px}
+.stat h2 {font:30px Georgia,serif;margin:9px 0;color:var(--navy)}
+.stat p {font-size:11px;color:#777}
+.columns {display:grid;grid-template-columns:1.5fr 1fr;gap:16px}
+.project {
+  padding:15px 0;border-bottom:1px solid #eee;
+}
+.project:last-child {border:0}
+.project h3 {font:17px Georgia,serif;margin-bottom:7px}
+.project p {font-size:11px;color:#777;margin-bottom:10px}
+.progress {
+  background:#eee;height:7px;border-radius:10px;overflow:hidden;
+}
+.progress span {display:block;height:100%;background:var(--gold)}
+.status {
+  display:inline-block;background:#e9f5e9;color:#23713b;
+  padding:5px 8px;border-radius:15px;font-size:10px;
+}
+.btn {
+  display:inline-block;background:var(--gold);color:var(--navy);
+  border:0;border-radius:25px;padding:11px 18px;
+  font-weight:bold;font-size:12px;text-decoration:none;
+  cursor:pointer;margin-top:12px;
+}
+.btn:hover {opacity:.85}
+.quick {
+  display:grid;grid-template-columns:1fr 1fr;gap:10px;
+}
+.quick a {
+  display:block;background:#fbf4e6;padding:16px 8px;
+  text-align:center;text-decoration:none;color:var(--navy);
+  border-radius:8px;font-size:12px;
+}
+.quick a:hover {background:#f0dfbd}
+.ticket,.file {
+  padding:13px 0;border-bottom:1px solid #eee;
+  display:flex;justify-content:space-between;gap:10px;
+  font-size:12px;
+}
+.ticket small,.file small {display:block;color:#888;margin-top:5px}
+.bottom-grid {display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+.help {
+  background:var(--navy);color:white;padding:24px;
+  margin-top:20px;border-radius:10px;
+}
+.help h2 {font:25px Georgia,serif;color:var(--gold)}
+.help p {font-size:12px;color:#ddd;margin-top:8px}
+footer {
+  background:#041322;color:white;padding:28px 5%;
+  margin-top:35px;text-align:center;font-size:11px;
+}
+footer span {color:var(--gold)}
+@media(max-width:850px) {
+  header {flex-wrap:wrap}
+  header nav {gap:12px}
+  .layout {grid-template-columns:1fr}
+  .sidebar {min-height:auto}
+  .stats {grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:560px) {
+  .hero h1 {font-size:32px}
+  .columns,.bottom-grid {grid-template-columns:1fr}
+  .container {padding:18px 12px}
+  header nav {width:100%;justify-content:center}
+  .stats {gap:8px}
+  .stat {padding:12px}
+  .stat h2 {font-size:25px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <div class="logo">D</div>
+    <div>
+      <strong>DANIEL</strong>
+      <small>MEDIA & TECHNOLOGY</small>
+    </div>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#portfolio">Portfolio</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+  <div class="profile">CLIENT PORTAL</div>
+</header>
+
+<section class="hero">
+  <h1>Client <span>Support Portal</span></h1>
+  <p>Your Projects. Our Support. Real Results.</p>
+  <p>A dedicated space for our clients to manage projects,
+  submit requirements, track progress and access project files.</p>
+</section>
+
+<div class="container">
+<div class="layout">
+
+<aside class="sidebar">
+  <div class="user">
+    Welcome, <span>Client</span><br>
+    <small>Daniel Media & Technology</small>
+  </div>
+  <a class="active" href="#dashboard">▦ Dashboard</a>
+  <a href="#projects">▣ My Projects</a>
+  <a href="#request">✉ Submit Request</a>
+  <a href="#tickets">▤ Support Tickets</a>
+  <a href="#files">▣ My Files</a>
+  <a href="#payments">₹ Invoices & Payments</a>
+  <a href="#help">⚙ Account Support</a>
+  <a href="index.html">← Back to Website</a>
+</aside>
+
+<main id="dashboard">
+  <h2 class="section-title">Your Dashboard</h2>
+
+  <div class="stats">
+    <div class="stat"><small>Active Projects</small><h2>03</h2><p>Currently in progress</p></div>
+    <div class="stat"><small>Open Tickets</small><h2>02</h2><p>Awaiting resolution</p></div>
+    <div class="stat"><small>Files Shared</small><h2>12</h2><p>Project documents</p></div>
+    <div class="stat"><small>Completed Projects</small><h2>05</h2><p>Successfully delivered</p></div>
+  </div>
+
+  <div class="columns">
+    <section class="panel" id="projects">
+      <h2 class="section-title">My Projects</h2>
+
+      <div class="project">
+        <h3>Website Development</h3>
+        <p>Project ID: DEM-001</p>
+        <div class="progress"><span style="width:70%"></span></div>
+        <p>70% Completed</p>
+        <span class="status">In Progress</span>
+      </div>
+
+      <div class="project">
+        <h3>Branding & Design</h3>
+        <p>Project ID: DEM-002</p>
+        <div class="progress"><span style="width:40%"></span></div>
+        <p>40% Completed</p>
+        <span class="status">In Progress</span>
+      </div>
+
+      <div class="project">
+        <h3>Digital Marketing</h3>
+        <p>Project ID: DEM-003</p>
+        <div class="progress"><span style="width:90%"></span></div>
+        <p>90% Completed</p>
+        <span class="status">Final Review</span>
+      </div>
+    </section>
+
+    <section class="panel" id="request">
+      <h2 class="section-title">Submit a Request</h2>
+      <p style="font-size:13px;color:#777;line-height:1.7">
+        Need a new service or additional work?
+        Send your requirements to our team.
+      </p>
+      <a class="btn" href="https://wa.me/918248666037?text=Hello%20Daniel%20Media%2C%20I%20need%20project%20support.">
+        + Submit Request
+      </a>
+      <hr style="border:0;border-top:1px solid #eee;margin:20px 0">
+      <h3 style="font:20px Georgia,serif;margin-bottom:14px">Quick Actions</h3>
+      <div class="quick">
+        <a href="#files">↑<br>Share File</a>
+        <a href="#tickets">▣<br>Raise a Ticket</a>
+        <a href="#payments">₹<br>Make a Payment</a>
+        <a href="#help">☎<br>Contact Support</a>
+      </div>
+    </section>
+  </div>
+
+  <div class="bottom-grid">
+    <section class="panel" id="tickets">
+      <h2 class="section-title">Support Tickets</h2>
+      <div class="ticket">
+        <div>Website Update Request<small>Ticket #001</small></div>
+        <span class="status">Open</span>
+      </div>
+      <div class="ticket">
+        <div>Logo Design Revision<small>Ticket #002</small></div>
+        <span class="status">In Progress</span>
+      </div>
+      <div class="ticket">
+        <div>Project Review<small>Ticket #003</small></div>
+        <span class="status">Resolved</span>
+      </div>
+    </section>
+
+    <section class="panel" id="files">
+      <h2 class="section-title">My Files</h2>
+      <div class="file">
+        <div>Brand Guidelines<small>PDF Document</small></div>
+        <span>PDF</span>
+      </div>
+      <div class="file">
+        <div>Product Images<small>Image Collection</small></div>
+        <span>ZIP</span>
+      </div>
+      <div class="file">
+        <div>Website Content<small>Document</small></div>
+        <span>DOC</span>
+      </div>
+      <p style="font-size:11px;color:#999;margin-top:12px">
+        Files will appear here when uploaded by your team.
+      </p>
+    </section>
+  </div>
+
+  <section class="panel" id="payments" style="margin-top:18px">
+    <h2 class="section-title">Invoices & Payments</h2>
+    <p style="font-size:13px;color:#777">
+      View your invoices and payment details through our support team.
+    </p>
+    <a class="btn" href="https://wa.me/918248666037?text=Hello%2C%20I%20need%20my%20project%20invoice%20details.">
+      Request Invoice Details
+    </a>
+  </section>
+
+  <section class="help" id="help">
+    <h2>Need Help?</h2>
+    <p>We're here to support your business at every step.</p>
+    <a class="btn" href="https://wa.me/918248666037" target="_blank">
+      Contact Support →
+    </a>
+  </section>
+</main>
+</div>
+</div>
+
+<footer>
+  <p>© 2026 Daniel Media & Technology. All rights reserved.</p>
+  <p><span>Creative Ideas. Digital Solutions. Real Results.</span></p>
+</footer>
+
+</body>
+</html>
