@@ -1,0 +1,593 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Daniel Media and Technology – Creative Design, Digital Marketing, Website Development and Technology Solutions.">
+<title>Daniel Media and Technology | Creative Digital Solutions</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --navy: #061525;
+  --navy2: #0b2033;
+  --gold: #d8ad61;
+  --gold-light: #f4d99b;
+  --cream: #f8f3e9;
+  --white: #fff;
+  --text: #182434;
+  --muted: #a9b0b8;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  font-family:'DM Sans',sans-serif;
+  background:var(--cream);
+  color:var(--text);
+  line-height:1.6;
+}
+a { text-decoration:none; color:inherit; }
+button { font:inherit; cursor:pointer; }
+.container { width:min(1160px,91%); margin:auto; }
+.gold { color:var(--gold); }
+.section { padding:76px 0; }
+.section-heading { margin-bottom:30px; }
+.eyebrow {
+  color:#a47a39; text-transform:uppercase;
+  letter-spacing:3px; font-size:11px; font-weight:700;
+}
+h1,h2,h3 { font-family:'Cormorant Garamond',serif; }
+.section-heading h2 { font-size:clamp(34px,5vw,48px); line-height:1.1; }
+.section-heading p { color:#777; margin-top:9px; font-size:14px; }
+
+/* HEADER */
+header {
+  background:rgba(4,17,31,.97);
+  color:white; position:sticky; top:0; z-index:1000;
+  border-bottom:1px solid rgba(216,173,97,.22);
+}
+.navbar {
+  min-height:76px; display:flex; align-items:center;
+  justify-content:space-between; gap:20px;
+}
+.brand { display:flex; align-items:center; gap:10px; }
+.brand-mark {
+  width:43px; height:43px; border:1px solid var(--gold);
+  border-radius:50%; display:grid; place-items:center;
+  color:var(--gold-light); font-family:'Cormorant Garamond';
+  font-size:27px; font-weight:700;
+}
+.brand-name { line-height:1.1; }
+.brand-name strong {
+  display:block; font-family:'Cormorant Garamond';
+  font-size:20px; letter-spacing:2px;
+}
+.brand-name small {
+  font-size:8px; color:var(--gold-light); letter-spacing:2px;
+}
+.nav-links { display:flex; align-items:center; gap:25px; }
+.nav-links a { font-size:12px; color:#e3e5e8; transition:.3s; }
+.nav-links a:hover { color:var(--gold); }
+.btn {
+  display:inline-flex; justify-content:center; align-items:center;
+  gap:9px; padding:12px 21px; border-radius:30px;
+  background:linear-gradient(110deg,#c79548,#f2d18a);
+  color:#172031; font-weight:700; font-size:12px;
+  border:0; transition:.3s;
+}
+.btn:hover { transform:translateY(-2px); box-shadow:0 8px 25px #d8ad6140; }
+.btn-outline {
+  background:transparent; color:white;
+  border:1px solid var(--gold);
+}
+.menu-toggle {
+  display:none; color:var(--gold); background:none;
+  border:1px solid #806638; padding:7px 11px; border-radius:6px;
+  font-size:20px;
+}
+
+/* HERO */
+.hero {
+  color:white; background:
+  radial-gradient(ellipse at 78% 50%,#243c4c 0%,transparent 42%),
+  linear-gradient(110deg,#041322,#0b1e30 65%,#071321);
+  min-height:540px; display:flex; align-items:center;
+  position:relative; overflow:hidden;
+}
+.hero:after {
+  content:""; position:absolute; right:-100px; top:-160px;
+  width:600px; height:600px; border:1px solid #d8ad6140;
+  border-radius:50%; box-shadow:0 0 0 30px #d8ad6109,
+  0 0 0 65px #d8ad6107;
+}
+.hero-grid {
+  display:grid; grid-template-columns:1.1fr .9fr;
+  align-items:center; gap:35px; position:relative; z-index:1;
+}
+.hero-copy { padding:65px 0; }
+.hero-copy .eyebrow { color:var(--gold-light); }
+.hero h1 {
+  font-size:clamp(48px,7vw,78px);
+  line-height:.98; margin:20px 0;
+  font-weight:500; letter-spacing:-1px;
+}
+.hero h1 span { color:var(--gold-light); display:block; }
+.hero-copy p { max-width:520px; color:#c5cbd2; font-size:14px; }
+.hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+.hero-tags { display:flex; flex-wrap:wrap; gap:22px; margin-top:38px; }
+.hero-tags span { font-size:11px; color:#d9dce0; }
+.hero-art {
+  min-height:370px; display:grid; place-items:center;
+  position:relative;
+}
+.hero-emblem {
+  width:min(340px,85%); aspect-ratio:1;
+  border:1px solid #c99b52; border-radius:50%;
+  display:grid; place-items:center; text-align:center;
+  background:radial-gradient(circle,#1b2d3b,#071522 70%);
+  box-shadow:0 0 60px #d8ad6120,inset 0 0 50px #d8ad6114;
+}
+.hero-emblem .letter {
+  font-family:'Cormorant Garamond'; font-size:130px;
+  color:var(--gold-light); line-height:.9;
+  text-shadow:0 5px 30px #d8ad6170;
+}
+.hero-emblem strong {
+  display:block; font-family:'Cormorant Garamond';
+  font-size:35px; letter-spacing:7px;
+}
+.hero-emblem small { color:var(--gold-light); letter-spacing:4px; font-size:9px; }
+
+/* SERVICES */
+.services-grid {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:17px;
+}
+.service-card {
+  background:white; border:1px solid #e8dfd0;
+  padding:25px 22px; border-radius:9px;
+  transition:.3s; box-shadow:0 5px 18px #1b26300a;
+}
+.service-card:hover { transform:translateY(-5px); border-color:var(--gold); }
+.service-icon {
+  width:46px; height:46px; display:grid; place-items:center;
+  border-radius:50%; background:#f6ecd9; color:#956a2c;
+  font-size:21px; margin-bottom:17px;
+}
+.service-card h3 { font-size:24px; margin-bottom:7px; }
+.service-card p { font-size:12px; color:#777; min-height:43px; }
+.service-card a { color:#a77935; font-size:11px; font-weight:700; display:inline-block; margin-top:15px; }
+
+/* STATS */
+.stats { background:var(--navy); color:white; padding:35px 0; }
+.stats-grid { display:grid; grid-template-columns:repeat(4,1fr); text-align:center; }
+.stat { border-right:1px solid #ffffff20; padding:10px; }
+.stat:last-child { border:0; }
+.stat strong { display:block; font:600 38px 'Cormorant Garamond'; color:var(--gold-light); }
+.stat span { color:#c4cbd2; font-size:11px; }
+
+/* PORTFOLIO */
+.portfolio-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.project {
+  background:white; border:1px solid #e8dfd0;
+  border-radius:9px; overflow:hidden;
+  transition:.3s;
+}
+.project:hover { transform:translateY(-5px); }
+.project-visual {
+  height:175px; display:grid; place-items:center;
+  background:linear-gradient(135deg,#071525,#24394b);
+  color:var(--gold-light); font:600 35px 'Cormorant Garamond';
+  letter-spacing:4px; position:relative;
+}
+.project:nth-child(2) .project-visual { background:linear-gradient(135deg,#2c2220,#b08a54); }
+.project:nth-child(3) .project-visual { background:linear-gradient(135deg,#28182b,#704c70); }
+.project:nth-child(4) .project-visual { background:linear-gradient(135deg,#102c34,#397b79); }
+.project:nth-child(5) .project-visual { background:linear-gradient(135deg,#10203e,#4e699b); }
+.project:nth-child(6) .project-visual { background:linear-gradient(135deg,#172b2a,#567d5e); }
+.project-info { padding:19px; }
+.project-info small { color:#a77935; font-size:10px; font-weight:700; }
+.project-info h3 { font-size:23px; margin:4px 0; }
+.project-info p { font-size:12px; color:#777; }
+
+/* WHY */
+.why { background:var(--navy); color:white; }
+.why-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:25px; }
+.why-item { text-align:center; }
+.why-item b { display:block; color:var(--gold-light); font-size:25px; margin-bottom:10px; }
+.why-item h3 { font-size:21px; }
+.why-item p { color:#b9c1c9; font-size:11px; margin-top:5px; }
+
+/* PROCESS */
+.process-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+.process-card { padding:15px; border-left:2px solid var(--gold); }
+.process-card small { color:#ad813e; font-weight:700; }
+.process-card h3 { font-size:23px; margin:6px 0; }
+.process-card p { color:#777; font-size:12px; }
+
+/* CTA */
+.cta {
+  background:linear-gradient(110deg,#061525,#142b3e);
+  color:white; padding:55px 0;
+}
+.cta-inner { display:flex; align-items:center; justify-content:space-between; gap:25px; }
+.cta h2 { font-size:40px; line-height:1.1; }
+.cta p { color:#c5cbd2; font-size:13px; margin-top:8px; }
+.cta-actions { display:flex; flex-wrap:wrap; gap:10px; }
+
+/* CONTACT */
+.contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:35px; }
+.contact-form { display:grid; gap:13px; }
+.contact-form input,.contact-form textarea,.contact-form select {
+  width:100%; padding:14px; border:1px solid #e3d9c9;
+  border-radius:6px; background:#fffdf9; font:13px 'DM Sans';
+  color:#222;
+}
+.contact-form textarea { min-height:130px; resize:vertical; }
+.contact-details { display:grid; gap:18px; }
+.contact-row { display:flex; gap:14px; align-items:flex-start; }
+.contact-row b { color:#9b7135; font-size:19px; }
+.contact-row strong { display:block; font-size:14px; }
+.contact-row span { color:#777; font-size:12px; overflow-wrap:anywhere; }
+
+/* FOOTER */
+footer { background:#041322; color:white; padding:48px 0 18px; }
+.footer-grid { display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:30px; }
+footer h3 { font-size:23px; color:var(--gold-light); margin-bottom:13px; }
+footer p,footer a { font-size:11px; color:#b7c0c9; }
+.footer-links { display:grid; gap:8px; }
+.footer-links a:hover { color:var(--gold-light); }
+.footer-bottom {
+  border-top:1px solid #ffffff20; margin-top:35px;
+  padding-top:17px; display:flex; justify-content:space-between;
+  gap:10px; color:#9da8b2; font-size:10px;
+}
+.whatsapp {
+  position:fixed; bottom:20px; right:20px; z-index:900;
+  background:#159d5a; color:white; width:52px; height:52px;
+  display:grid; place-items:center; border-radius:50%;
+  font-size:23px; box-shadow:0 5px 20px #0004;
+}
+
+/* RESPONSIVE */
+@media(max-width:850px) {
+  .nav-links {
+    display:none; position:absolute; top:76px; left:0; right:0;
+    background:#061525; padding:22px 5%;
+    flex-direction:column; align-items:flex-start;
+    border-top:1px solid #ffffff20;
+  }
+  .nav-links.open { display:flex; }
+  .menu-toggle { display:block; }
+  .navbar>.btn { display:none; }
+  .hero-grid { grid-template-columns:1fr; }
+  .hero-copy { padding:65px 0 5px; }
+  .hero-art { min-height:300px; padding-bottom:35px; }
+  .services-grid,.portfolio-grid { grid-template-columns:repeat(2,1fr); }
+  .why-grid { grid-template-columns:repeat(2,1fr); }
+  .footer-grid { grid-template-columns:repeat(2,1fr); }
+}
+@media(max-width:560px) {
+  .section { padding:55px 0; }
+  .hero { min-height:unset; }
+  .hero h1 { font-size:52px; }
+  .hero-emblem { width:260px; }
+  .hero-emblem .letter { font-size:100px; }
+  .hero-emblem strong { font-size:28px; }
+  .services-grid,.portfolio-grid { grid-template-columns:1fr; }
+  .stats-grid { grid-template-columns:repeat(2,1fr); gap:15px 0; }
+  .stat:nth-child(2) { border:0; }
+  .why-grid { grid-template-columns:repeat(2,1fr); }
+  .process-grid { grid-template-columns:repeat(2,1fr); }
+  .cta-inner { display:block; }
+  .cta-actions { margin-top:22px; }
+  .contact-grid { grid-template-columns:1fr; }
+  .footer-grid { grid-template-columns:1fr 1fr; }
+  .footer-bottom { flex-direction:column; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container navbar">
+    <a href="#home" class="brand">
+      <div class="brand-mark">D</div>
+      <div class="brand-name">
+        <strong>DANIEL</strong>
+        <small>MEDIA & TECHNOLOGY</small>
+      </div>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a href="#contact" class="btn">Get a Quote →</a>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <div class="eyebrow">Creative Ideas • Digital Solutions • Real Results</div>
+      <h1>Your Vision.<span>Our Innovation.</span></h1>
+      <p>We help brands grow with creative design, digital marketing and modern technology solutions. Let's transform your ideas into meaningful digital experiences.</p>
+      <div class="hero-actions">
+        <a href="#services" class="btn">Explore Our Services →</a>
+        <a href="#portfolio" class="btn btn-outline">View Our Work</a>
+      </div>
+      <div class="hero-tags">
+        <span>✧ Branding & Design</span>
+        <span>✧ Digital Marketing</span>
+        <span>✧ Website Solutions</span>
+        <span>✧ AI Solutions</span>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="hero-emblem">
+        <div>
+          <div class="letter">D</div>
+          <strong>DANIEL</strong>
+          <small>MEDIA & TECHNOLOGIES</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">What We Do</div>
+      <h2>Our <span class="gold">Services</span></h2>
+      <p>Complete digital solutions for modern businesses.</p>
+    </div>
+
+    <div class="services-grid">
+      <article class="service-card">
+        <div class="service-icon">✧</div>
+        <h3>Branding & Design</h3>
+        <p>Logo design, brand identity, visiting cards, brochures and creative designs.</p>
+        <a href="#contact">Get Started →</a>
+      </article>
+      <article class="service-card">
+        <div class="service-icon">◉</div>
+        <h3>Digital Marketing</h3>
+        <p>Social media marketing, campaign management and business growth strategies.</p>
+        <a href="#contact">Get Started →</a>
+      </article>
+      <article class="service-card">
+        <div class="service-icon">⌘</div>
+        <h3>Website Development</h3>
+        <p>Business websites, e-commerce websites, WordPress and custom solutions.</p>
+        <a href="#contact">Get Started →</a>
+      </article>
+      <article class="service-card">
+        <div class="service-icon">▷</div>
+        <h3>Video & Content</h3>
+        <p>Promotional videos, reels, product shoots and creative content production.</p>
+        <a href="#contact">Get Started →</a>
+      </article>
+      <article class="service-card">
+        <div class="service-icon">↗</div>
+        <h3>Advertising Campaigns</h3>
+        <p>Meta ads, Google ads, lead generation and performance marketing.</p>
+        <a href="#contact">Get Started →</a>
+      </article>
+      <article class="service-card">
+        <div class="service-icon">✦</div>
+        <h3>Technology & AI</h3>
+        <p>AI tools, automation, chatbot solutions and business technology support.</p>
+        <a href="#contact">Get Started →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="container stats-grid">
+    <div class="stat"><strong>100+</strong><span>Creative Possibilities</span></div>
+    <div class="stat"><strong>50+</strong><span>Business Opportunities</span></div>
+    <div class="stat"><strong>4+</strong><span>Digital Service Areas</span></div>
+    <div class="stat"><strong>24/7</strong><span>Digital Accessibility</span></div>
+  </div>
+</section>
+
+<section class="section" id="portfolio">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">Selected Work</div>
+      <h2>Our Featured <span class="gold">Projects</span></h2>
+      <p>A glimpse of creative directions and digital experiences.</p>
+    </div>
+
+    <div class="portfolio-grid">
+      <article class="project">
+        <div class="project-visual">ZYNK MAX</div>
+        <div class="project-info"><small>BRAND IDENTITY</small><h3>Zynk Max</h3><p>Branding and identity concept for a modern brand.</p></div>
+      </article>
+      <article class="project">
+        <div class="project-visual">KIVO TIME</div>
+        <div class="project-info"><small>E-COMMERCE</small><h3>Kivo Time</h3><p>Digital shopping experience and online store concept.</p></div>
+      </article>
+      <article class="project">
+        <div class="project-visual">SHE VIBES</div>
+        <div class="project-info"><small>SOCIAL MEDIA</small><h3>She Vibes</h3><p>Creative social media and brand communication concept.</p></div>
+      </article>
+      <article class="project">
+        <div class="project-visual">AUREONZ</div>
+        <div class="project-info"><small>REAL ESTATE</small><h3>Aureonz Developers</h3><p>Real estate digital marketing and website concept.</p></div>
+      </article>
+      <article class="project">
+        <div class="project-visual">CM PETS</div>
+        <div class="project-info"><small>BUSINESS BRANDING</small><h3>CM Pets & Aquarium</h3><p>Pet business branding and digital presentation concept.</p></div>
+      </article>
+      <article class="project">
+        <div class="project-visual">DIGITAL</div>
+        <div class="project-info"><small>TECHNOLOGY</small><h3>Digital Solutions</h3><p>Creative digital solutions for growing businesses.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section why" id="about">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">Why Daniel Media</div>
+      <h2>Ideas That Create <span class="gold">Impact.</span></h2>
+      <p style="color:#b9c1c9">We combine creativity, strategy and technology to help businesses move forward.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-item"><b>♧</b><h3>Affordable Pricing</h3><p>Practical solutions for businesses of different sizes.</p></div>
+      <div class="why-item"><b>✧</b><h3>Creative Thinking</h3><p>Distinctive ideas and thoughtful design.</p></div>
+      <div class="why-item"><b>◷</b><h3>Reliable Delivery</h3><p>Clear communication and planned execution.</p></div>
+      <div class="why-item"><b>◎</b><h3>Client Focused</h3><p>Solutions built around business goals.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="process">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">How We Work</div>
+      <h2>Our Working <span class="gold">Process</span></h2>
+      <p>A simple and transparent process from idea to delivery.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-card"><small>01 — DISCOVER</small><h3>Discuss</h3><p>Understand your needs, goals and expectations.</p></div>
+      <div class="process-card"><small>02 — STRATEGY</small><h3>Plan</h3><p>Prepare the right strategy and project proposal.</p></div>
+      <div class="process-card"><small>03 — CREATE</small><h3>Design & Develop</h3><p>Bring your ideas to life with creative execution.</p></div>
+      <div class="process-card"><small>04 — LAUNCH</small><h3>Deliver</h3><p>Launch your project and provide ongoing support.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container cta-inner">
+    <div>
+      <h2>Let's Build Something<br><span class="gold">Amazing Together.</span></h2>
+      <p>Have a project in mind? Let's turn your ideas into reality.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="#contact" class="btn">Get a Free Quote →</a>
+      <a href="#contact" class="btn btn-outline">Contact Our Team</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">Let's Connect</div>
+      <h2>Get In <span class="gold">Touch</span></h2>
+      <p>Tell us about your project. We would love to hear from you.</p>
+    </div>
+    <div class="contact-grid">
+      <form class="contact-form" onsubmit="sendEmail(event)">
+        <input id="name" type="text" placeholder="Your Name" required>
+        <input id="email" type="email" placeholder="Email Address" required>
+        <input id="phone" type="tel" placeholder="Phone Number">
+        <select id="service" required>
+          <option value="">Select a Service</option>
+          <option>Branding & Design</option>
+          <option>Digital Marketing</option>
+          <option>Website Development</option>
+          <option>Video & Content</option>
+          <option>Advertising Campaigns</option>
+          <option>Technology & AI</option>
+          <option>Other</option>
+        </select>
+        <textarea id="message" placeholder="Tell us about your project..." required></textarea>
+        <button class="btn" type="submit">Send Enquiry →</button>
+      </form>
+
+      <div class="contact-details">
+        <div class="contact-row"><b>☎</b><div><strong>Phone</strong><span>Add your business phone number</span></div></div>
+        <div class="contact-row"><b>✉</b><div><strong>Email</strong><span>Add your official business email</span></div></div>
+        <div class="contact-row"><b>⌖</b><div><strong>Location</strong><span>Tamil Nadu, India</span></div></div>
+        <div class="contact-row"><b>◷</b><div><strong>Business Hours</strong><span>Monday – Saturday | Contact us for availability</span></div></div>
+        <div style="padding:22px;background:#eee5d6;border-radius:8px">
+          <h3 style="font-size:25px">Have an idea?</h3>
+          <p style="font-size:12px;color:#777;margin:8px 0 15px">Let's discuss how we can help your business grow.</p>
+          <a href="#contact" class="btn">Start a Project →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:16px">
+          <div class="brand-mark">D</div>
+          <div class="brand-name"><strong>DANIEL</strong><small>MEDIA & TECHNOLOGY</small></div>
+        </div>
+        <p>We create brands, grow businesses and build digital experiences that make an impact.</p>
+      </div>
+      <div><h3>Quick Links</h3><div class="footer-links">
+        <a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#portfolio">Portfolio</a><a href="#contact">Contact</a>
+      </div></div>
+      <div><h3>Our Services</h3><div class="footer-links">
+        <a href="#services">Branding & Design</a><a href="#services">Digital Marketing</a><a href="#services">Website Development</a><a href="#services">Video & Content</a><a href="#services">Technology & AI</a>
+      </div></div>
+      <div><h3>Contact</h3><div class="footer-links">
+        <a href="#contact">Phone: Add your number</a><a href="#contact">Email: Add your email</a><a href="#contact">Tamil Nadu, India</a>
+      </div></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Daniel Media and Technology. All rights reserved.</span>
+      <span>Privacy Policy · Terms & Conditions</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Replace the number below with your WhatsApp number including country code -->
+<a class="whatsapp" href="https://wa.me/910000000000" target="_blank" rel="noopener" aria-label="WhatsApp">◉</a>
+
+<script>
+function toggleMenu() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('navLinks').classList.remove('open');
+  });
+});
+document.getElementById('year').textContent = new Date().getFullYear();
+
+function sendEmail(event) {
+  event.preventDefault();
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const phone = document.getElementById('phone').value;
+  const service = document.getElementById('service').value;
+  const message = document.getElementById('message').value;
+
+  // Replace this with your official email address.
+  const recipient = "YOUR-EMAIL@example.com";
+  const subject = encodeURIComponent("New Website Enquiry - " + service);
+  const body = encodeURIComponent(
+    "Name: " + name + "\nEmail: " + email +
+    "\nPhone: " + phone + "\nService: " + service +
+    "\nMessage: " + message
+  );
+  window.location.href = "mailto:" + recipient +
+    "?subject=" + subject + "&body=" + body;
+}
+</script>
+</body>
+</html>
