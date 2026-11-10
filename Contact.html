@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Daniel Media & Technology</title>
+<meta name="description" content="Contact Daniel Media and Technology for branding, website development, digital marketing and creative digital solutions.">
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{--navy:#061626;--navy2:#102b43;--gold:#d9aa54;--light:#f3d99e;--cream:#fbf6ed;--ink:#172333;--muted:#73777d}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink)}
+a{text-decoration:none;color:inherit}
+.container{width:min(1160px,92%);margin:auto}
+header{background:var(--navy);color:white;position:sticky;top:0;z-index:20;border-bottom:1px solid #ffffff22}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-family:'Playfair Display',serif;font-size:23px;color:var(--light);font-weight:800}
+.logo small{display:block;font:9px 'DM Sans',sans-serif;letter-spacing:2px;color:white;margin-top:4px}
+nav{display:flex;gap:25px;font-size:12px}
+nav a{color:#e7eaf0}
+nav a:hover,nav a.active{color:var(--light)}
+.quote{background:linear-gradient(110deg,#f3d99e,#d9aa54);color:var(--navy);padding:12px 20px;border-radius:25px;font-size:12px;font-weight:800}
+.hero{background:linear-gradient(90deg,rgba(3,15,28,.98),rgba(3,15,28,.78),rgba(3,15,28,.2)),url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=85') center/cover;color:white}
+.hero-inner{min-height:310px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:25px;padding:40px 0}
+.breadcrumb{font-size:12px;color:#d5d9df;margin-bottom:18px}
+.eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--light);font-weight:700}
+h1,h2,h3{font-family:'Playfair Display',serif}
+h1{font-size:clamp(43px,6vw,65px);line-height:1.1;margin:8px 0}
+h1 span{color:var(--light)}
+.hero p{font-size:13px;line-height:1.8;color:#e1e5eb;max-width:550px}
+.hero-points{display:flex;gap:22px;flex-wrap:wrap;margin-top:23px;font-size:11px;color:var(--light)}
+.hero-brand{display:flex;justify-content:center;align-items:center}
+.monogram{width:225px;height:225px;border:1px solid #d9aa5480;border-radius:50%;display:grid;place-items:center;font:150px 'Playfair Display',serif;color:var(--light);text-shadow:0 0 35px #d9aa54;box-shadow:0 0 60px #d9aa5420}
+.contact-section{padding:40px 0;background:#fffaf3}
+.contact-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:35px}
+.section-title{font-size:27px;color:var(--navy);margin-bottom:5px}
+.section-sub{font-size:12px;color:var(--muted);margin-bottom:22px}
+.contact-form{background:#fff;border:1px solid #eee5d8;border-radius:12px;padding:23px;box-shadow:0 5px 22px #1a27300b}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+input,select,textarea{width:100%;border:1px solid #e8e1d8;border-radius:10px;padding:14px;font:12px 'DM Sans',sans-serif;background:#fff;color:var(--ink);outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--gold)}
+textarea{height:110px;resize:vertical;margin-top:12px}
+.full{grid-column:1/-1}
+.submit{width:100%;border:0;border-radius:25px;background:linear-gradient(110deg,#f2d99e,#d9aa54);padding:14px;font-weight:800;color:var(--navy);font-size:12px;margin-top:13px;cursor:pointer}
+.form-note{font-size:10px;color:#858585;margin-top:10px;line-height:1.5}
+.contact-list{display:grid;gap:15px}
+.contact-item{display:flex;gap:14px;align-items:center}
+.contact-icon{width:45px;height:45px;flex-shrink:0;border-radius:50%;background:var(--navy);color:var(--light);display:grid;place-items:center;font-size:20px}
+.contact-item h3{font-size:15px;color:var(--navy);margin-bottom:4px}
+.contact-item p{font-size:11px;color:var(--muted);line-height:1.6;overflow-wrap:anywhere}
+.contact-action{display:flex;align-items:center;justify-content:space-between;border:1px solid #eee5d8;border-radius:10px;padding:13px;margin-top:10px;background:white;font-size:12px;font-weight:700}
+.contact-action:hover{border-color:var(--gold)}
+.action-left{display:flex;align-items:center;gap:12px}
+.action-icon{width:35px;height:35px;border-radius:50%;background:var(--navy);color:var(--light);display:grid;place-items:center}
+.location-work{display:grid;grid-template-columns:1fr 1fr}
+.location{background:var(--navy);color:white;padding:35px 7%}
+.location h2,.work h2{font-size:27px;margin-bottom:8px}
+.location p,.work p{font-size:12px;line-height:1.7;color:#cbd3dd;margin-bottom:18px}
+.map{height:190px;border:0;border-radius:10px;width:100%}
+.work{padding:35px 8%;background:linear-gradient(120deg,#fffaf2,#f0dfc0);display:flex;flex-direction:column;justify-content:center}
+.work h2{color:var(--navy)}
+.work p{color:#62666c}
+.work-actions{display:flex;gap:10px;flex-wrap:wrap}
+.work-actions a{padding:12px 17px;border-radius:25px;font-size:11px;font-weight:800}
+.primary{background:var(--gold);color:var(--navy)}
+.secondary{border:1px solid var(--navy);color:var(--navy)}
+.work-benefits{display:flex;gap:18px;flex-wrap:wrap;margin-top:22px}
+.benefit{text-align:center;font-size:10px;color:var(--navy)}
+.benefit span{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#f1dfbd;margin:0 auto 6px;font-size:17px}
+.why{padding:40px 0}
+.center{text-align:center;margin-bottom:24px}
+.center h2{font-size:30px;color:var(--navy);margin:7px 0}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.why-card{background:white;border:1px solid #eee5d8;border-radius:10px;padding:18px}
+.why-card span{font-size:24px;color:#b58a42}
+.why-card h3{font-size:14px;color:var(--navy);margin:10px 0 5px}
+.why-card p{font-size:11px;color:var(--muted);line-height:1.6}
+.faq{background:var(--navy);color:white;padding:40px 0}
+.faq h2{font-size:30px;color:white}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+details{border:1px solid #ffffff2b;border-radius:9px;padding:14px}
+summary{font-size:12px;cursor:pointer;font-weight:600}
+details p{font-size:11px;line-height:1.7;color:#c5d0dc;padding-top:12px}
+footer{background:#03111f;color:white;padding:32px 0 14px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:25px}
+footer h3{font-size:16px;color:var(--light);margin-bottom:12px}
+footer p,footer a{display:block;font-size:11px;color:#c2cbd5;line-height:2}
+footer a:hover{color:var(--light)}
+.copyright{border-top:1px solid #ffffff22;margin-top:25px;padding-top:13px;display:flex;justify-content:space-between;gap:12px;font-size:10px;color:#aab4c0}
+@media(max-width:850px){
+ .contact-grid{gap:20px}
+ .why-grid{grid-template-columns:repeat(2,1fr)}
+ .footer-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:620px){
+ .nav{height:auto;min-height:70px;flex-wrap:wrap;padding:13px 0}
+ nav{order:3;width:100%;overflow-x:auto;gap:19px;padding:7px 0}
+ nav a{white-space:nowrap}
+ .quote{font-size:10px;padding:10px 13px}
+ .hero-inner{grid-template-columns:1fr;min-height:300px}
+ .hero-brand{display:none}
+ h1{font-size:45px}
+ .contact-grid{grid-template-columns:1fr}
+ .contact-form{padding:15px}
+ .form-grid{grid-template-columns:1fr}
+ .location-work{grid-template-columns:1fr}
+ .location,.work{padding:30px 6%}
+ .why-grid{grid-template-columns:repeat(2,1fr)}
+ .faq-grid{grid-template-columns:1fr}
+ .footer-grid{grid-template-columns:1fr 1fr}
+ .copyright{flex-direction:column}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+ <div class="container nav">
+  <a class="logo" href="index.html">DANIEL<small>MEDIA & TECHNOLOGY</small></a>
+  <nav>
+   <a href="index.html">Home</a>
+   <a href="about.html">About</a>
+   <a href="services.html">Services</a>
+   <a href="blog.html">Blog</a>
+   <a href="portfolio.html">Portfolio</a>
+   <a class="active" href="contact.html">Contact</a>
+  </nav>
+  <a class="quote" href="#message">Get a Quote →</a>
+ </div>
+</header>
+
+<section class="hero">
+ <div class="container hero-inner">
+  <div>
+   <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;›&nbsp; Contact</div>
+   <div class="eyebrow">Let's Connect</div>
+   <h1>Contact <span>Us</span></h1>
+   <p>Let's Bring Your Ideas to Life. We're here to help you with all your digital needs. Whether you have a project in mind, need a consultation, or just want to know more about our services, feel free to reach out. Our team will get back to you as soon as possible.</p>
+   <div class="hero-points">
+    <span>◎ Quick Response</span>
+    <span>♧ Friendly Support</span>
+    <span>⚙ Customized Solutions</span>
+    <span>◇ Client Focused</span>
+   </div>
+  </div>
+  <div class="hero-brand"><div class="monogram">D</div></div>
+ </div>
+</section>
+
+<section class="contact-section" id="message">
+ <div class="container contact-grid">
+
+  <div>
+   <h2 class="section-title">— Send Us a Message</h2>
+   <p class="section-sub">Fill out the form below and our team will get back to you shortly.</p>
+
+   <form class="contact-form" id="contactForm">
+    <div class="form-grid">
+     <input id="name" type="text" placeholder="♙  Your Name *" required>
+     <input id="phone" type="tel" placeholder="☎  Phone Number *" required>
+     <input id="email" type="email" placeholder="✉  Email Address *" required>
+     <select id="service" required>
+      <option value="">◎  Service Interested In *</option>
+      <option>Branding & Design</option>
+      <option>Digital Marketing</option>
+      <option>Website Development</option>
+      <option>Video & Content Creation</option>
+      <option>Advertising Campaigns</option>
+      <option>Technology & AI</option>
+      <option>E-commerce Solutions</option>
+      <option>Social Media Management</option>
+      <option>Other</option>
+     </select>
+    </div>
+    <textarea id="messageText" placeholder="✎  Your Message *&#10;Tell us about your project or requirements..." required></textarea>
+    <button class="submit" type="submit">Send Message →</button>
+    <p class="form-note" id="formStatus">Submitting opens WhatsApp with your enquiry details. You can review and send the message there.</p>
+   </form>
+  </div>
+
+  <div>
+   <h2 class="section-title">— Get In Touch</h2>
+   <p class="section-sub">We're just a call, message or email away.</p>
+
+   <div class="contact-list">
+    <div class="contact-item">
+     <div class="contact-icon">☎</div>
+     <div><h3>Phone / WhatsApp</h3><p>+91 82486 66037<br>Available for business enquiries</p></div>
+    </div>
+    <div class="contact-item">
+     <div class="contact-icon">✉</div>
+     <div><h3>Email</h3><p>Please contact us through WhatsApp for now.</p></div>
+    </div>
+    <div class="contact-item">
+     <div class="contact-icon">⌖</div>
+     <div><h3>Tamil Nadu, India</h3><p>Available for Pan India & Global Projects</p></div>
+    </div>
+   </div>
+
+   <a class="contact-action" href="https://wa.me/918248666037" target="_blank" rel="noopener">
+    <span class="action-left"><span class="action-icon">◉</span>Chat on WhatsApp</span><span>›</span>
+   </a>
+   <a class="contact-action" href="https://wa.me/918248666037?text=Hello%2C%20I%20would%20like%20to%20schedule%20a%20meeting." target="_blank" rel="noopener">
+    <span class="action-left"><span class="action-icon">▣</span>Schedule a Meeting</span><span>›</span>
+   </a>
+  </div>
+
+ </div>
+</section>
+
+<section class="location-work">
+ <div class="location">
+  <h2>Our Location</h2>
+  <p>Visit us or find us on the map. We are based in Tamil Nadu, but we work with clients across India and worldwide.</p>
+  <iframe class="map" title="Tamil Nadu map" loading="lazy" src="https://www.google.com/maps?q=Tamil%20Nadu%2C%20India&output=embed"></iframe>
+ </div>
+ <div class="work">
+  <div class="eyebrow">Your Next Step</div>
+  <h2>Let's Work Together</h2>
+  <p>Have a project in mind? Get in touch for a free consultation and customized plan for your business.</p>
+  <div class="work-actions">
+   <a class="primary" href="#message">Get a Free Quote →</a>
+   <a class="secondary" href="https://wa.me/918248666037" target="_blank" rel="noopener">◉ Chat on WhatsApp</a>
+  </div>
+  <div class="work-benefits">
+   <div class="benefit"><span>♧</span>Free Consultation</div>
+   <div class="benefit"><span>▤</span>Customized Solutions</div>
+   <div class="benefit"><span>◷</span>On-Time Response</div>
+  </div>
+ </div>
+</section>
+
+<section class="why">
+ <div class="container">
+  <div class="center">
+   <div class="eyebrow">Our Commitment</div>
+   <h2>Why Contact Us?</h2>
+   <p class="section-sub">We believe in clear communication, transparency and long-term partnerships.</p>
+  </div>
+  <div class="why-grid">
+   <div class="why-card"><span>◇</span><h3>Discuss Your Ideas</h3><p>Share your goals and requirements with our team.</p></div>
+   <div class="why-card"><span>⚙</span><h3>Get Expert Advice</h3><p>Our team will suggest the best solutions.</p></div>
+   <div class="why-card"><span>▤</span><h3>Customized Proposal</h3><p>Receive a tailored plan and quotation.</p></div>
+   <div class="why-card"><span>➤</span><h3>Start Your Project</h3><p>Let's bring your ideas to life.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="faq">
+ <div class="container">
+  <div class="eyebrow">Need Help?</div>
+  <h2>Frequently Asked Questions</h2>
+  <p class="section-sub" style="color:#c5d0dc">Quick answers to common questions.</p>
+  <div class="faq-grid">
+   <details><summary>How quickly will you respond?</summary><p>We aim to respond to business enquiries as soon as possible during working hours.</p></details>
+   <details><summary>Can I work with you outside Tamil Nadu?</summary><p>Yes. We can work with clients across India and internationally through online communication.</p></details>
+   <details><summary>Do you provide free consultation?</summary><p>Yes. Contact us to discuss your business requirements and explore suitable solutions.</p></details>
+   <details><summary>How do I get a quote for my project?</summary><p>Send us your project details through the enquiry form or WhatsApp. We will discuss your requirements and provide a proposal.</p></details>
+  </div>
+ </div>
+</section>
+
+<footer>
+ <div class="container">
+  <div class="footer-grid">
+   <div>
+    <h3>DANIEL</h3>
+    <p>MEDIA & TECHNOLOGY</p>
+    <p>We create brands, grow businesses and build digital experiences that make an impact.</p>
+   </div>
+   <div>
+    <h3>Quick Links</h3>
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="blog.html">Blog</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a>
+   </div>
+   <div>
+    <h3>Our Services</h3>
+    <a href="services.html#branding">Branding & Design</a><a href="services.html#marketing">Digital Marketing</a><a href="services.html#web">Website Development</a><a href="services.html#video">Video & Content</a><a href="services.html#ai">Technology & AI</a>
+   </div>
+   <div>
+    <h3>Contact Info</h3>
+    <a href="https://wa.me/918248666037">☎ +91 82486 66037</a>
+    <a href="https://wa.me/918248666037">WhatsApp Enquiries</a>
+    <a href="#message">Tamil Nadu, India</a>
+   </div>
+  </div>
+  <div class="copyright">
+   <span>© 2026 Daniel Media & Technology. All rights reserved.</span>
+   <span>Privacy Policy &nbsp; | &nbsp; Terms & Conditions</span>
+  </div>
+ </div>
+</footer>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit",function(event){
+ event.preventDefault();
+
+ const name=document.getElementById("name").value.trim();
+ const phone=document.getElementById("phone").value.trim();
+ const email=document.getElementById("email").value.trim();
+ const service=document.getElementById("service").value;
+ const message=document.getElementById("messageText").value.trim();
+
+ const text=
+ "New Website Enquiry%0A"+
+ "Name: "+encodeURIComponent(name)+"%0A"+
+ "Phone: "+encodeURIComponent(phone)+"%0A"+
+ "Email: "+encodeURIComponent(email)+"%0A"+
+ "Service: "+encodeURIComponent(service)+"%0A"+
+ "Message: "+encodeURIComponent(message);
+
+ window.open("https://wa.me/918248666037?text="+text,"_blank");
+});
+</script>
+
+</body>
+</html>
