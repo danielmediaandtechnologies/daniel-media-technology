@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Daniel Media & Technology</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --navy:#061525;
+  --navy2:#0b2033;
+  --gold:#d8ad61;
+  --cream:#f8f3e9;
+  --text:#182434;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{width:min(1160px,92%);margin:auto}
+h1,h2,h3{font-family:'Cormorant Garamond',serif}
+header{background:var(--navy);color:white;position:sticky;top:0;z-index:100}
+.navbar{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:10px}
+.brand img{width:48px;height:48px;object-fit:contain}
+.brand strong{display:block;font-family:'Cormorant Garamond';font-size:21px;color:var(--gold)}
+.brand small{font-size:9px;letter-spacing:2px}
+.nav-links{display:flex;align-items:center;gap:24px}
+.nav-links a{font-size:12px;color:#eee}
+.nav-links a:hover,.active{color:var(--gold)!important}
+.btn{display:inline-block;background:linear-gradient(110deg,#c79548,#f2d18a);color:#172031;padding:12px 22px;border-radius:30px;font-size:12px;font-weight:700}
+.menu-toggle{display:none;background:none;color:white;border:0;font-size:27px}
+.hero{background:linear-gradient(90deg,rgba(4,17,31,.98),rgba(4,17,31,.78),rgba(4,17,31,.15)),url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=85') center/cover;color:white;padding:65px 0}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:35px}
+.eyebrow{color:var(--gold);font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:700}
+.hero h1{font-size:clamp(48px,7vw,76px);line-height:1;margin:12px 0}
+.hero h1 span{color:var(--gold)}
+.hero p{color:#e0e0e0;font-size:14px;max-width:520px}
+.hero-art{display:flex;justify-content:center;align-items:center;min-height:260px}
+.hero-logo{width:290px;height:290px;border:1px solid #d8ad6180;border-radius:50%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;box-shadow:0 0 60px #d8ad6120}
+.hero-logo .letter{font-family:'Cormorant Garamond';font-size:125px;color:var(--gold);line-height:1}
+.hero-logo strong{font-family:'Cormorant Garamond';font-size:28px;letter-spacing:4px}
+.hero-logo small{color:var(--gold);letter-spacing:3px;font-size:10px}
+.stats{padding:25px 0;background:#fff}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);text-align:center;gap:15px}
+.stat strong{display:block;font-family:'Cormorant Garamond';font-size:34px;color:var(--navy)}
+.stat span{font-size:11px;color:#777}
+.section{padding:65px 0}
+.who-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:45px;align-items:center}
+.who-image{height:350px;border-radius:12px;overflow:hidden}
+.who-image img{width:100%;height:100%;object-fit:cover}
+.section-title{font-size:clamp(32px,4vw,45px);line-height:1.1;margin:8px 0 15px}
+.who-copy p{font-size:13px;color:#666;margin-bottom:15px}
+.features{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}
+.feature{display:flex;gap:12px;align-items:center}
+.feature-icon{width:42px;height:42px;flex-shrink:0;border-radius:50%;background:var(--navy);color:var(--gold);display:grid;place-items:center;font-size:20px}
+.feature strong{display:block;font-family:'Cormorant Garamond';font-size:17px}
+.feature small{font-size:10px;color:#777}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:45px}
+.value-card{padding:25px;border-radius:8px;background:var(--navy);color:white}
+.value-card:nth-child(2){background:#f1d39d;color:var(--navy)}
+.value-card .symbol{font-size:35px;color:var(--gold)}
+.value-card:nth-child(2) .symbol{color:var(--navy)}
+.value-card h3{font-size:24px;margin:5px 0}
+.value-card p{font-size:12px;opacity:.85}
+.team-heading{text-align:center;margin-bottom:30px}
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.team-card{text-align:center;background:white;border-radius:8px;overflow:hidden;padding-bottom:16px}
+.team-card img{width:100%;height:145px;object-fit:cover}
+.team-card h3{font-size:19px;margin-top:10px}
+.team-card p{font-size:11px;color:#777;padding:0 10px}
+.cta{background:linear-gradient(110deg,var(--navy),#142f49);color:white;padding:45px 0}
+.cta-inner{display:flex;align-items:center;justify-content:space-between;gap:25px}
+.cta h2{font-size:38px;line-height:1.1}
+.cta p{color:#c5cbd2;font-size:12px;margin-top:8px}
+.cta-actions{display:flex;gap:10px;flex-wrap:wrap}
+.whatsapp{display:inline-block;border:1px solid #d8ad61;color:white;padding:11px 18px;border-radius:30px;font-size:12px}
+footer{background:#041322;color:white;padding:45px 0 18px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:25px}
+footer h3{font-size:22px;color:var(--gold);margin-bottom:12px}
+footer p,footer a{font-size:11px;color:#b7c0c9}
+.footer-links{display:grid;gap:7px}
+.footer-bottom{border-top:1px solid #ffffff20;margin-top:30px;padding-top:16px;display:flex;justify-content:space-between;gap:10px;color:#9da8b2;font-size:10px}
+@media(max-width:800px){
+.nav-links{display:none;position:absolute;top:76px;left:0;right:0;background:var(--navy);padding:22px 5%;flex-direction:column;align-items:flex-start}
+.nav-links.open{display:flex}
+.menu-toggle{display:block}
+.navbar>.btn{display:none}
+.hero-grid,.who-grid{grid-template-columns:1fr}
+.hero-art{min-height:220px}
+.hero-logo{width:230px;height:230px}
+.hero-logo .letter{font-size:95px}
+.stats-grid{grid-template-columns:repeat(2,1fr)}
+.values-grid{grid-template-columns:1fr}
+.team-grid{grid-template-columns:repeat(2,1fr)}
+.footer-grid{grid-template-columns:1fr 1fr}
+.cta-inner{display:block}
+.cta-actions{margin-top:20px}
+}
+@media(max-width:480px){
+.section{padding:48px 0}
+.features{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:1fr 1fr}
+.hero{padding:50px 0}
+.team-card img{height:115px}
+.footer-bottom{flex-direction:column}
+}
+</style>
+</head>
+
+<body>
+<header>
+<div class="container navbar">
+<a href="index.html" class="brand">
+<img src="file_00000000ce5c8208a422f98349da5378.png" alt="Daniel Logo">
+<div><strong>DANIEL</strong><small>MEDIA & TECHNOLOGY</small></div>
+</a>
+<nav class="nav-links" id="navLinks">
+<a href="index.html">Home</a>
+<a href="about.html" class="active">About</a>
+<a href="services.html">Services</a>
+<a href="blog.html">Blog</a>
+<a href="portfolio.html">Portfolio</a>
+<a href="contact.html">Contact</a>
+</nav>
+<a href="contact.html" class="btn">Get a Quote →</a>
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+</div>
+</header>
+
+<main>
+<section class="hero">
+<div class="container hero-grid">
+<div>
+<div class="eyebrow">Home › About</div>
+<h1>About <span>Us</span></h1>
+<h3 style="font-family:'DM Sans';font-size:17px;margin-bottom:12px">Creative People. Digital Solutions. Real Results.</h3>
+<p>Daniel Media & Technology is a creative digital agency helping businesses grow with innovative design, marketing and technology solutions. We combine creativity, strategy and modern technology to build strong brands and deliver measurable results.</p>
+</div>
+<div class="hero-art">
+<div class="hero-logo">
+<div class="letter">D</div>
+<strong>DANIEL</strong>
+<small>MEDIA & TECHNOLOGIES</small>
+</div>
+</div>
+</div>
+</section>
+
+<section class="stats">
+<div class="container stats-grid">
+<div class="stat"><strong>100+</strong><span>Projects Completed</span></div>
+<div class="stat"><strong>50+</strong><span>Happy Clients</span></div>
+<div class="stat"><strong>4+</strong><span>Years Experience</span></div>
+<div class="stat"><strong>99%</strong><span>Client Satisfaction</span></div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="who-grid">
+<div class="who-image">
+<img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1000&q=85" alt="Creative agency workspace">
+</div>
+<div class="who-copy">
+<div class="eyebrow">Who We Are</div>
+<h2 class="section-title">Turning Ideas Into<br>Brands That People Love.</h2>
+<p>We are a team of creative designers, digital marketers, developers and content creators who are passionate about helping businesses grow. From startups to established brands, we deliver tailored solutions that create real impact in the digital world.</p>
+<div class="features">
+<div class="feature"><div class="feature-icon">◎</div><div><strong>Goal-Oriented Solutions</strong><small>We focus on your business growth.</small></div></div>
+<div class="feature"><div class="feature-icon">✦</div><div><strong>Creative & Innovative</strong><small>Unique ideas for a stronger brand.</small></div></div>
+<div class="feature"><div class="feature-icon">♧</div><div><strong>Experienced Team</strong><small>Skilled professionals with industry experience.</small></div></div>
+<div class="feature"><div class="feature-icon">◇</div><div><strong>Transparent Process</strong><small>Clear communication and timely delivery.</small></div></div>
+</div>
+</div>
+</div>
+
+<div class="values-grid">
+<div class="value-card"><div class="symbol">◎</div><h3>Our Mission</h3><p>To help businesses grow with creative design, digital marketing and technology solutions that create real value.</p></div>
+<div class="value-card"><div class="symbol">◉</div><h3>Our Vision</h3><p>To become a trusted digital partner for businesses worldwide, known for creativity, innovation and measurable results.</p></div>
+<div class="value-card"><div class="symbol">◇</div><h3>Our Values</h3><p>✦ Creativity in Everything We Do<br>✦ Client Success Is Our Priority<br>✦ Quality and Timely Delivery<br>✦ Long-Term Relationships<br>✦ Continuous Learning and Innovation</p></div>
+</div>
+</div>
+</section>
+
+<section class="section" style="padding-top:10px">
+<div class="container">
+<div class="team-heading">
+<div class="eyebrow">Our Team</div>
+<h2 class="section-title">Meet the People Behind Daniel Media & Technology</h2>
+<p style="font-size:12px;color:#777">A passionate team working together to create innovative digital solutions for your business.</p>
+</div>
+<div class="team-grid">
+<div class="team-card"><img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=600&q=80" alt="Team collaboration"><h3>Strategists</h3><p>Plan, research and create the right digital strategy for your business.</p></div>
+<div class="team-card"><img src="https://images.unsplash.com/photo-1523726491678-bf852e717f6a?auto=format&fit=crop&w=600&q=80" alt="Designer at work"><h3>Designers</h3><p>Create stunning and unique designs for your brand.</p></div>
+<div class="team-card"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80" alt="Developers working"><h3>Developers</h3><p>Build fast, secure and user-friendly websites and applications.</p></div>
+<div class="team-card"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80" alt="Marketing team"><h3>Marketers</h3><p>Drive growth with targeted marketing campaigns.</p></div>
+</div>
+</div>
+</section>
+
+<section class="cta">
+<div class="container cta-inner">
+<div><h2>Let's Build Something<br>Amazing Together</h2><p>Have a project in mind? We're here to help bring your ideas to life.</p></div>
+<div class="cta-actions">
+<a href="contact.html" class="btn">Get a Free Quote →</a>
+<a href="https://wa.me/918248666037" target="_blank" class="whatsapp">WhatsApp Us</a>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div><h3>DANIEL</h3><p>We create brands, grow businesses and build digital experiences that make an impact.</p></div>
+<div><h3>Quick Links</h3><div class="footer-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="blog.html">Blog</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a></div></div>
+<div><h3>Our Services</h3><div class="footer-links"><a href="services.html">Branding & Design</a><a href="services.html">Digital Marketing</a><a href="services.html">Website Development</a><a href="services.html">Video & Content</a><a href="services.html">Advertising</a></div></div>
+<div><h3>Contact Info</h3><div class="footer-links"><a href="https://wa.me/918248666037">WhatsApp: 8248666037</a><a href="contact.html">Email: Contact Us</a><span>Tamil Nadu, India</span></div></div>
+</div>
+<div class="footer-bottom"><span>© 2026 Daniel Media & Technology. All rights reserved.</span><span>Privacy Policy · Terms & Conditions</span></div>
+</div>
+</footer>
+
+<script>
+function toggleMenu(){
+ document.getElementById('navLinks').classList.toggle('open');
+}
+document.querySelectorAll('.nav-links a').forEach(link=>{
+ link.addEventListener('click',()=>{
+  document.getElementById('navLinks').classList.remove('open');
+ });
+});
+</script>
+</body>
+</html>
